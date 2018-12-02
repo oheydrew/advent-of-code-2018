@@ -1,9 +1,9 @@
 defmodule Advent01 do
+  alias Advent01.Calibrator
+
   @moduledoc """
     Calibrates the Time-Machine-Wrist-Thingy
   """
-  alias Advent01.Calibrator
 
-  IO.puts "Hello"
-  Calibrator.calibrate(Calibrator.input) |> IO.inspect()
+  IO.puts "Calibrated at #{Calibrator.calibrate(Calibrator.input)}"
 end
