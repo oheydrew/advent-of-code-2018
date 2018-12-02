@@ -1,4 +1,4 @@
-defmodule Advent01.Calibrator do
+defmodule Day01.Calibrator do
   @moduledoc """
     Takes input, and outputs the sum of their values
   """

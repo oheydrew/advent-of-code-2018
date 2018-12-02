@@ -1,5 +1,5 @@
-defmodule Advent01 do
-  alias Advent01.Calibrator
+defmodule Day01 do
+  alias Day01.Calibrator
 
   @moduledoc """
     Calibrates the Time-Machine-Wrist-Thingy
