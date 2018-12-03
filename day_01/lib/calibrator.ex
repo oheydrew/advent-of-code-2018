@@ -16,14 +16,15 @@ defmodule Day01.Calibrator do
   @doc """
     Problem #2 Calculator
   """
-  def return_twice_found_freq(_, acc \\ 0, acc_list \\ [])
-  def return_twice_found_freq([], acc, acc_list) do
-    return_twice_found_freq(Input.day01input, acc, acc_list)
+  def return_twice_found_freq(_, working_freqs \\ [], acc \\ 0, acc_list \\ [])
+  def return_twice_found_freq(input_freqs, [], acc, acc_list) do
+    IO.inspect acc, label: "Working... Current accumulator"
+    return_twice_found_freq(input_freqs, input_freqs, acc, acc_list)
   end
-  def return_twice_found_freq([head | tail] = _list, acc, acc_list) do
+  def return_twice_found_freq(input_freqs, [head | tail] = _working_freqs, acc, acc_list) do
     case Enum.member?(acc_list, acc) do
-      true -> IO.puts "Found! #{acc}"
-      false -> return_twice_found_freq(tail, head + acc, [acc | acc_list])
+      true -> IO.inspect acc, label: "Found! 2nd found frequency"
+      false -> return_twice_found_freq(input_freqs, tail, head + acc, [acc | acc_list])
     end
   end
 
